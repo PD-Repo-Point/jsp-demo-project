@@ -73,7 +73,23 @@
 
     <%@ include file="footer.jsp" %>
 
+    <%--
+        * JSP Comment - In source code one can see the HTML comment in out.println(),
+                        but JSP comment is ignored during the translation.
+    --%>
 
+    <!-- HTML Comment -->
+    <%-- JSP Comment --%>
+
+    <%--
+        Implicit object : pageContext
+    --%>
+
+    <%
+        String name = (String) pageContext.getAttribute("user", PageContext.SESSION_SCOPE);
+        out.print("User : ");
+        out.print(name);
+    %>
 
 </body>
 </html>
